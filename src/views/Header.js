@@ -1,6 +1,7 @@
 /* @flow */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Animated,
@@ -8,8 +9,6 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-
-import ReactComponentWithPureRenderMixin from 'react/lib/ReactComponentWithPureRenderMixin';
 
 import HeaderTitle from './HeaderTitle';
 import HeaderBackButton from './HeaderBackButton';

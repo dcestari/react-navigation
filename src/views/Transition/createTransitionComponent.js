@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Image,
@@ -54,12 +55,12 @@ function createTransitionComponent(Component) {
   class TransitionComponent extends React.Component {
     _component: any;
     static contextTypes = {
-      registerTransitionItem: React.PropTypes.func,
-      unregisterTransitionItem: React.PropTypes.func,
+      registerTransitionItem: PropTypes.func,
+      unregisterTransitionItem: PropTypes.func,
       // transitionProps: React.PropTypes.object,
       // transitionConfigs: React.PropTypes.array,
-      routeName: React.PropTypes.string,
-      transitionStylesChange: React.PropTypes.object,
+      routeName: PropTypes.string,
+      transitionStylesChange: PropTypes.object,
     };
 
     constructor(props, context) {
@@ -144,6 +145,8 @@ function createTransitionComponent(Component) {
           this.context.routeName,
           this.render(),
           nativeHandle,
+          null,
+          true,
         ));
       }
     }

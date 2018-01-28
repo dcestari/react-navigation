@@ -1,6 +1,7 @@
 /* @flow */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Animated,
@@ -63,8 +64,8 @@ class Card extends React.Component<any, Props, any> {
   static childContextTypes = {
     // transitionProps: React.PropTypes.object.isRequired,
     // transitionConfigs: React.PropTypes.array.isRequired,
-    routeName: React.PropTypes.string.isRequired,
-    transitionStylesChange: React.PropTypes.object,
+    routeName: PropTypes.string.isRequired,
+    transitionStylesChange: PropTypes.object,
   };
 
   props: Props;

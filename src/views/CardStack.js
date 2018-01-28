@@ -1,6 +1,7 @@
 /* @flow */
 
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Animated, StyleSheet, NativeModules, PanResponder, Platform, View, I18nManager, Keyboard, UIManager } from 'react-native';
 import invariant from 'invariant';
 import _ from 'lodash';
@@ -199,8 +200,8 @@ class CardStack extends Component<DefaultProps, Props, void> {
   };
 
   static childContextTypes = {
-    registerTransitionItem: React.PropTypes.func,
-    unregisterTransitionItem: React.PropTypes.func,
+    registerTransitionItem: PropTypes.func,
+    unregisterTransitionItem: PropTypes.func,
   }
 
   static defaultProps: DefaultProps = {
@@ -484,7 +485,7 @@ class CardStack extends Component<DefaultProps, Props, void> {
         const animatedStyle = styleMap && styleMap[item.routeName] && styleMap[item.routeName][item.id];
         return React.cloneElement(item.reactElement, {
           style: [item.reactElement.props.style, styles.clonedItem, animatedStyle],
-        }, []);
+        });
       });
       const animatedContainerStyle = {
         opacity: transitionProps.progress.interpolate({
